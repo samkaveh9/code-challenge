@@ -18,4 +18,7 @@ php artisan key:generate
 ```
 php artisan migrate
 ```
-
+#### link storage directory in public folder
+```
+php artisan storage:link
+```
