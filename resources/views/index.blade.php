@@ -1,18 +1,16 @@
 @section('title', 'ویدیوها')
 @extends('layouts.master')
 @section('master')
-    <div class="jumbotron jumbotron-fluid" style="background-color: #fff !important;">
+    <div class="jumbotron " style="background-color: #fff !important;">
         <div class="d-flex justify-content-between">
             <div class="font-weight-bold"><h3>ویدیوها</h3></div>
             <div class=""><a href="{{ route('videos.create') }}" class="btn btn-primary">افزودن ویدیو</a></div>
         </div>
     </div>
 
-    <div class="row">
-        <section id="gallery">
-            <div class="container">
+    <div class="container">
                 <div class="row">
-                  @if($videos)
+                  @if(count($videos) > 0)
                       @foreach($videos as $video)
                             <div class="col-lg-4 mb-4">
                                 <div class="card text-right">
@@ -28,14 +26,14 @@
                             </div>
                       @endforeach
                       @else
-                        <div class="col-lg-8 mb-4">
-                            <h3 class="text-center">
-                                آیتمی برای نمایش وجود ندارد
-                            </h3>
+                        <div class="col-8 mx-auto">
+                            <div class="alert alert-warning text-center">
+                                <strong class="font-weight-bold">
+                                    آیتمی برای نمایش وجود ندارد
+                                </strong>
+                            </div>
                         </div>
                   @endif
                 </div>
             </div>
-        </section>
-    </div>
 @endsection
